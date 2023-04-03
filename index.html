@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head</title>
+    <!--상대경로(현재 파일 위치에서 찾는 경로), 절대경로(서버에서 열땐 절대경로로..)-->
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <style>
+      /* 문서의 스타일을 정의 */
+      h1 {
+        background-color: red;
+        font-size: 40px;
+        line-height: 60px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Heading 1</h1>
+
+    <img src="/assets/img/sample.jpg" width="400" alt="샘플 이미지"/>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>설명</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>이미란</td>
+          <td>개발자</td>
+          <td>&nbsp;</td> <!--공백을 의미-->
+        </tr>
+        <tr>
+          <td colspan="2">김은지</td> <!--td가 2줄로 인식된다-->
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="3">배은지</td> <!--td가 3줄로 인식된다-->
+        </tr>
+      </tbody>
+    </table>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>설명</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">이미란</td><!--td가 세로로 2줄로 인식된다-->
+          <td>개발자</td>
+          <td>&nbsp;</td> <!--공백을 의미-->
+        </tr>
+        <tr>
+          <td colspan="2">김은지</td> <!--위에서 rowspan을 썼기때문에 가상의 td가 하나 생긴걸 감안해야한다.-->
+        </tr>
+        <tr>
+          <td colspan="3">배은지</td> <!--td가 가로로 3줄로 인식된다-->
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
