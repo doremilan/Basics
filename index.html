@@ -1,73 +1,78 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Head</title>
-    <!--상대경로(현재 파일 위치에서 찾는 경로), 절대경로(서버에서 열땐 절대경로로..)-->
-    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
-    <style>
-      /* 문서의 스타일을 정의 */
-      h1 {
-        background-color: red;
-        font-size: 40px;
-        line-height: 60px;
-      }
-
-    </style>
+    <title>Form</title>
   </head>
   <body>
-    <h1>Heading 1</h1>
+    <form action="/login">
+      <fieldset>
+        <legend>로그인 양식</legend>
+          <div>
+            <label for="login-id">아이디</label>
+            <input id="login-id" type="text" name="login_id" required placeholder="아이디를 입력해주세요." />
+          </div>
+          <div>
+            <label for="login-pw">비밀번호</label>
+            <!-- <input id="login-pw" type="password" name="login_pw" readonly value="123" placeholder="비밀번호를 입력해주세요." /> -->
+            <input id="login-pw" type="password" name="login_pw" required placeholder="비밀번호를 입력해주세요." />
+          </div>
+          <div>
+            <input id="login-auto" type="checkbox" name="login_auto" value="1" />
+            <label for="login-auto">자동 로그인</label>
+          </div>
+      </fieldset>
+      <fieldset>
+        <legend>추가 정보</legend>
+          <input type="range" min="0" max="200" step="50" />
+          <input type="datetime" />
+          <input type="number" min="0" max="20" value="10" step="2" />
+          <input type="tel" /> <!--모바일에서 키패드가 넘버패드로 바뀜-->
+          <input type="submit" value="로그인" />
+          <button type="submit">로그인</button>
 
-    <img src="/assets/img/sample.jpg" width="400" alt="샘플 이미지"/>
+          <div> <!--name이 같은 속성이면 하나만 체크됨-->
+            <span>좋아하는 과일</span>
+            <div>
+              <div>
+                <input id="selection-1" type="radio" name="selection" value="사과" checked />
+                <label for="selection-1">사과</label>
+              </div>
+              <div>
+                <input id="selection-2" type="radio" name="selection" value="오렌지" />
+                <label for="selection-2">오렌지</label>
+              </div>
+              <div>
+                <input id="selection-3" type="radio" name="selection" value="딸기" />
+                <label for="selection-3">딸기</label>
+              </div>
+              <div>
+                <input id="selection-4" type="radio" name="selection" value="망고" />    
+                <label for="selection-4">망고</label>
+              </div>
+            </div>
+          </div>
 
-    <table border="1">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>설명</th>
-          <th>비고</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>이미란</td>
-          <td>개발자</td>
-          <td>&nbsp;</td> <!--공백을 의미-->
-        </tr>
-        <tr>
-          <td colspan="2">김은지</td> <!--td가 2줄로 인식된다-->
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td colspan="3">배은지</td> <!--td가 3줄로 인식된다-->
-        </tr>
-      </tbody>
-    </table>
+          <label for="content">내용</label><br />
+          <textarea id="content" cols="30" rows="4" placeholder="내용을 입력해주세요.">
+    이름:
+    생일:
+          </textarea><br />
 
-    <table border="1">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>설명</th>
-          <th>비고</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td rowspan="2">이미란</td><!--td가 세로로 2줄로 인식된다-->
-          <td>개발자</td>
-          <td>&nbsp;</td> <!--공백을 의미-->
-        </tr>
-        <tr>
-          <td colspan="2">김은지</td> <!--위에서 rowspan을 썼기때문에 가상의 td가 하나 생긴걸 감안해야한다.-->
-        </tr>
-        <tr>
-          <td colspan="3">배은지</td> <!--td가 가로로 3줄로 인식된다-->
-        </tr>
-      </tbody>
-    </table>
+          <select name="" id="">
+            <option selected disabled>선택해주세요.</option>
+            <option value="0">사과</option>
+            <option value="1">오렌지</option>
+            <option value="2" disabled>딸기</option>
+            <option value="3">망고</option>
+          </select><br />
+
+          <label for="upload-file">파일 선택</label>
+          <input id="upload-file" type="file" placeholder="이미지 파일을 선택해주세요." accept="image/*" multiple />
+          <input type="file" placeholder="이미지 파일을 선택해주세요." accept="image/png" />
+    </fieldset>
+    </form>
   </body>
 </html>
