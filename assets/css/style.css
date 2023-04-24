@@ -1,138 +1,207 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
+:root {}
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  /*좌우 스크롤 안나오게*/
-  /* overflow-x: hidden; */
-  /*상하 스크롤 안나오게*/
-  /* overflow-y: hidden; */
-  /*스크롤 안되게*/
-  overflow: hidden;
-  /*상하 스크롤만 되게*/
-  overflow-y: scroll;
+  overflow-x: auto;
+  /*vw-브라우저의 width, vh-브라우저 창의 height*/
+  /*200 - 뷰포트 2배만큼 스크롤 생긴다*/
+  min-width: 100vw;
+  min-height: 200vh; 
   font-family: 'Noto Sans KR', sans-serif;
-  /* font-family: 'Montserrat', sans-serif; */
-  padding-top: 46px; 
 }
 
-a {
-  display: inline-block;
-  vertical-align: top;
-  transition: all 200ms;
-}
-
-/* :visited 브라우저에 링크 방문 내역이 있는 상태 */
-/* element:state*/
-/* <element>:link - state (상태)*/
-a, a:link, a:visited {
-  color: black;
-  text-decoration: none;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-a:hover {
-  color: white;
-}
-
-.box {
-  margin: 30px;
-  padding: 30px;
-}
-
-.box a {
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: skyblue;
-  border-radius: 6px;
-  transition: all 200ms; /*어떤 스타일이 들어오더라도 00초동안 움직임을 주겠다는 의미..*/
-}
-
-.box a.link_naver {
-  visibility: hidden
-}
-
-.box a:hover {
-  padding-right: 40px;
-  padding-left: 40px;
-  border-radius: 20px;
-}
-
-/* :active - a 요소를 클릭할 때 상태 */
-.box a:active {
-  padding-right: 60px;
-  padding-left: 60px;
-  background-color: tomato;
-  font-size: 20px;
-  border-radius: 999px;
-  line-height: 26px;
-}
-
-.box:hover a {
-  display: none;
-}
-
-.box:hover a.link_naver {
-  display: inline-block;
-  visibility: visible;
-}
-
-.menu_container {
-  position: relative;
-  z-index: 100;
-}
-
-ul.menu {
-  /*문서 흐름을 따름*/
-  /* position: static; */
-  /*기준점에서 사방 움직일 수 있음*/
-  /* position: relative; */
-  /*부모 속성의 기준점을 따름*/
-  /* position: absolute; */
-  /*스크롤 움직여도 고정*/
-  position: fixed; 
-  /* top: 100px; */
-  /* right: 100px; */
-  /* left: 100px; */
-  /* bottom: 100px; */
+header.header {
+  position: fixed;
+  z-index: 1000;
   top: 0;
   right: 0;
   left: 0;
-  background-color: white;
-  border-bottom: 1px solid lightgray;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  /* margin-top: 30px; */
-  list-style-type: none;
-}
-
-ul.menu li {
-  display: inline-block;
-  margin: 10px;
-  vertical-align: top;
-}
-
-ul.menu li a {
-  padding: 4px 8px;
-  color: gray;
-  font-size: 12px;
-  line-height: 18px;
-}
-
-ul.menu li a:hover {
-  color: black;
-  font-weight: 600;
-}
-
-.box-2 {
-  position: relative;
-  width: 500px;
-  height: 500px;
+  height: 60px;
   background-color: black;
   color: white;
-  font-size: 80px;
-  line-height: 100px;
+}
+
+header.header::before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-top: 2px solid red;
+}
+
+main.main {
+  display: block;
+  position: relative;
+  width: 200vw;
+  min-height: 100vh;
+  padding-top: 60px;
+  /* background-color: blue; */
+  /*보더 영역까지 해서 width 값을 맞춰준다 : 500이면 보더까지 포함해서 500으로 만들어줌*/
+  box-sizing: border-box;
+  /*컨텐츠만 영역을 잡아서 width 값을 계산*/
+  /* box-sizing: content-box; */
+}
+
+main.main section.section {
+  position: relative;
+  /* height: 100vh; */
+  /*띄어쓰기 꼭 써줘야함*/
+  height: calc(100vh - 60px); 
+}
+
+main.main section.section .box {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 500px;
+  height: 500px;
+  background-color: dodgerblue;
+  color: white;
+}
+
+.section-1 {
+  background-color: tomato;
+}
+.section-2 {
+  background-color: skyblue;
+  /*투명도 100은 1*/
+  opacity: 0.5;
+}
+
+.section-3 ul {
+  background-color: aqua;
+}
+
+/*요소의 하위 요소만을 지정*/
+/* .section-3 > ul {
+  background-color: blue;
+} */
+
+/*span 다음에 오는 ul 요소만 적용*/
+/* .section-3 span + ul {
+  background-color: black;
+  color: white;
+}
+
+.section-3 > ul li + li {
+  background-color: red;
+} */
+
+/* p + p {
+  background-color: red;
+} */
+
+/*p다음에 오는 p들은 모두 적용*/
+/* p ~ p {
+  background-color: red;
+} */
+
+/*:child*/
+/*:first-child*/
+/*:last-child*/
+/* ul li:first-child {
+  background-color: blue;
+} */
+
+/* ul li:last-child {
+  background-color: red;
+}
+
+.section-3 > ul > li:first-child {
+  background-color: blueviolet;
+} */
+
+/*nth는 1 부터 시작*/
+/* .section-3 > ul > li:nth-child(1) {
+  background-color: blueviolet;
+} */
+
+/*2배수 요소 다음 꺼 (나머지 값)*/
+.section-3 > ul > li:nth-child(2n+1) {
+  background-color: blueviolet;
+}
+
+
+p.hello ~ p {
+ background-color: red;
+}
+
+input.input {
+  padding: 4px, 10px;
+  font-size: 20px;
+  line-height: 26px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  transition: all 200ms ease-in-out;
+}
+
+input.input:focus-visible {
+  padding: 8px 20px;
+  outline: none;
+  border-color: red;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+input:read-only {
+  background-color: black;
+  color: white;
+}
+
+input:disabled {
+  background-color: gray;
+  opacity: 0.5;
+}
+
+input.checkbox {
+  width: 10px;
+  height: 10px;
+}
+
+input.checkbox + span {
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+input.checkbox:checked {
+  background-color: red;
+}
+
+input.checkbox:checked + span {
+  color: red;
+}
+
+/*:not 포함하지 않는 경우에만 적용*/
+main.main section.section:not(.section-3) {
+  background-color: yellowgreen;
+  color: black
+}
+
+/* main.main section.section:not(p) {
+
+} */
+
+section.section::before {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: sienna;
+}
+
+section.section::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: sienna;
 }
