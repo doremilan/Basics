@@ -5,55 +5,134 @@
   padding: 0;
 }
 
-
-.box {
-  width: 300px;
-  margin: 20px;
-  font-size: 16px;
-  line-height: 24px;
-  /* font-weight: normal;
-  font-weight: bold;
-  font-weight: lighter; */
-
-  /* font-weight: 300; /*light*/
-  /* font-weight: 200;  */
-  /*ultra light*/
-  /* font-weight: 100;  */
-  /*thin*/
-  /* font-weight: 500;  */
-  /*semi bold*/
-  /* font-weight: 600;  */
-  /*bold*/
-  /* font-weight: 700;
-  font-weight: 800; */
-  /* font-weight: 900;
-  font-weight: 400;reguler */
-
-  /* font-style: oblique;
-  font-style: italic;
-  font-style: normal; */
-
-	/* font-family: 'Noto Sans KR', 'Roboto', 'Noto Sans', -apple-system, 'Helvetica Neue', 'Arial', sans-serif;
-
-	font-family: 'SF Pro KR', 'SF Pro Display', 'SF Pro Icons', 'Apple Gothic', 'HY Gulim', 'MalgunGothic', 'HY Dotum', 'Lexi Gulim', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; */
-
-
-  /*폰트 축약형 - 수정*/
+body {
+  /*좌우 스크롤 안나오게*/
+  /* overflow-x: hidden; */
+  /*상하 스크롤 안나오게*/
+  /* overflow-y: hidden; */
+  /*스크롤 안되게*/
+  overflow: hidden;
+  /*상하 스크롤만 되게*/
+  overflow-y: scroll;
+  font-family: 'Noto Sans KR', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  padding-top: 46px; 
 }
 
-.box-1 {
-  font-family: 'Noto Sans KR', sans-serif;
+a {
+  display: inline-block;
+  vertical-align: top;
+  transition: all 200ms;
+}
+
+/* :visited 브라우저에 링크 방문 내역이 있는 상태 */
+/* element:state*/
+/* <element>:link - state (상태)*/
+a, a:link, a:visited {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+a:hover {
+  color: white;
+}
+
+.box {
+  margin: 30px;
+  padding: 30px;
+}
+
+.box a {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: skyblue;
+  border-radius: 6px;
+  transition: all 200ms; /*어떤 스타일이 들어오더라도 00초동안 움직임을 주겠다는 의미..*/
+}
+
+.box a.link_naver {
+  visibility: hidden
+}
+
+.box a:hover {
+  padding-right: 40px;
+  padding-left: 40px;
+  border-radius: 20px;
+}
+
+/* :active - a 요소를 클릭할 때 상태 */
+.box a:active {
+  padding-right: 60px;
+  padding-left: 60px;
+  background-color: tomato;
+  font-size: 20px;
+  border-radius: 999px;
+  line-height: 26px;
+}
+
+.box:hover a {
+  display: none;
+}
+
+.box:hover a.link_naver {
+  display: inline-block;
+  visibility: visible;
+}
+
+.menu_container {
+  position: relative;
+  z-index: 100;
+}
+
+ul.menu {
+  /*문서 흐름을 따름*/
+  /* position: static; */
+  /*기준점에서 사방 움직일 수 있음*/
+  /* position: relative; */
+  /*부모 속성의 기준점을 따름*/
+  /* position: absolute; */
+  /*스크롤 움직여도 고정*/
+  position: fixed; 
+  /* top: 100px; */
+  /* right: 100px; */
+  /* left: 100px; */
+  /* bottom: 100px; */
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  /* margin-top: 30px; */
+  list-style-type: none;
+}
+
+ul.menu li {
+  display: inline-block;
+  margin: 10px;
+  vertical-align: top;
+}
+
+ul.menu li a {
+  padding: 4px 8px;
+  color: gray;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+ul.menu li a:hover {
+  color: black;
+  font-weight: 600;
 }
 
 .box-2 {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.box-3 {
-  /* font-family: futura-pt, sans-serif;
-  font-weight: 700; */
-
-  font-family: essonnes-text, serif;
-  font-weight: 400;
-  font-style: italic;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: black;
+  color: white;
+  font-size: 80px;
+  line-height: 100px;
 }

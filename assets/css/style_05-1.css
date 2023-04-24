@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+}
+
+a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  /* vertical-align: top; */
+  vertical-align: middle;
+  background-color: skyblue;
+  border-radius: 6px;
+  transition: all 200ms;
+}
+
+
+
+/* element:state*/
+/* <element>:link - state (상태)*/
+a, a:link, a:visited {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* :visited 브라우저에 링크 방문 내역이 있는 상태 */
+a:visited {
+  color: black;
+  /* font-weight: 600; */
+}
+
+a:hover {
+  padding-right: 40px;
+  padding-left: 40px;
+  border-radius: 20px;
+  color: white;
+  transition: all 200ms; /*어떤 스타일이 들어오더라도 00초동안 움직임을 주겠다는 의미..*/
+}
+
+/* :active - a 요소를 클릭할 때 상태 */
+a:active {
+  padding-right: 60px;
+  padding-left: 60px;
+  background-color: tomato;
+  font-size: 20px;
+  border-radius: 999px;
+  line-height: 26px;
+}
+
+a.link_naver {
+  visibility: hidden
+}
+
+.box {
+  margin: 30px;
+  padding: 30px;
+}
+
+.box:hover a {
+  display: none;
+}
+
+.box:hover a.link_naver {
+  display: inline-block;
+  visibility: visible;
+}
