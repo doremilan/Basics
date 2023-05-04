@@ -1,3 +1,7 @@
+:root {
+  --gh-height: 400px
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +12,66 @@ img {
   vertical-align: top;
 }
 
-header#header {}
+header#header {
+  position: relative;
+  z-index: 1001;
+  background-color: white;
+  /* height: var(--gh-height); */
+  /* position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0; */
+/* 
+  top: 50px;
+  right: 50px;
+  bottom: 50px;
+  left: 50px; */
+  /* bottom: 0; */
+  /*opacity: 0.5 */
+}
+
+#header:hover {
+  --gh-height: 200px
+}
+
+#searchbar {
+  --search-duration: 120ms;
+  --search-ease: ease-in-out;
+
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  border-bottom: 1px solid #10ce72;
+  /*호버 했다가 나갈때 움직임 설정*/
+  transition: all var(--search-duration) var(--search-ease); 
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0);
+}
+
+#searchbar:hover {
+  --search-duration: 320ms;
+  --search-ease: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  /* border-bottom-width: 3px; */
+    border-bottom: 2px solid #10ce72;
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.12);
+  /*호버 할때 움직임 설정*/
+  /* transition: all 320ms ease-in;
+  transition: all 320ms cubic-bezier(0.860, 0.000, 0.070, 1.000); */
+}
+
+#searchbar .content-area {
+  width: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
 
 header#header .content-area {
   width: 1130px;
@@ -49,7 +112,9 @@ header#header .group .content-area::after {
   margin-left: auto;
   margin-right: auto;
   padding: 20px 30px;
+  /* padding-top: 233px */
 }
+
 
 #contents main#main{
   float: left;
@@ -57,6 +122,47 @@ header#header .group .content-area::after {
 
 #contents aside#aside {
   float: right;
+}
+
+#contents main#main .veta + .newsstand {
+  margin-top: 12px;
+}
+
+#contents main#main .veta ~ .themecast {
+  position: relative;
+  margin-top: 35px;
+}
+
+#contents aside#aside .account + .timesquare {
+  margin-top: 12px;
+}
+
+#contents aside#aside .account ~ .veta_brandin {
+  margin-top: 12px;
+}
+
+#contents aside#aside .account ~ .shop {
+  margin-top: 15px;
+}
+
+
+#contents main#main .themecast p.paddle {
+  position: absolute;
+  top: 40px;
+  width: 40px;
+  height: 40px;
+  background-image: url(/assets/img/naver_main.png);
+  background-size: 442px 428px;
+}
+
+#contents main#main .themecast p.paddle.paddle-prev {
+  left: -20px;
+  background-position: -128px -342px;
+}
+
+#contents main#main .themecast p.paddle.paddle-next {
+  right: -20px;
+  background-position: -44px -342px;
 }
 
 #contents::after {
