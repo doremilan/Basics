@@ -1,0 +1,140 @@
+:root {
+  --gh-heigh: 400px
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+header#header {
+  position: relative;
+  z-index: 1001;
+  background-color: white;
+}
+
+#header:hover {
+  --gh-height: 200px
+}
+
+#searchbar {
+  --search-duration: 120ms;
+  --search-ease: ease-in-out;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  border-bottom: 1px solid #10ce72;
+  transition: all var(--search-duration) var(--search-ease);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0);
+}
+
+#searchbar:hover {
+  transition: all 320ms ease-in;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #10ce72;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+#searchbar .content-area {
+  width: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+header#header .content-area{
+  width: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+header#header .special {
+  border-bottom: 1px solid #e4e8eb;
+}
+
+header#header .group {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+header#header .group nav.navigation {
+  float: left;
+}
+
+header#header .group .weather {
+  float: right;
+}
+
+header#header .group .content-area::after {
+  content: '';
+  display: block;
+  clear: both;
+  width: 0;
+  height: 0;
+}
+
+#contents {
+  width: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 30px;
+}
+
+#contents main#main {
+  float: left;
+}
+
+#contents aside#aside {
+  float: right;
+}
+
+#contents main#main .veta + .newsstand {
+  margin-top: 12px;
+}
+
+#contents main#main .veta ~ .themecast {
+  margin-top: 35px;
+}
+
+#contents aside#aside .account + .timesquare {
+  margin-top: 12px;
+}
+
+#contents aside#aside .account ~ .veta_brandin {
+  margin-top: 12px;
+}
+
+#contents aside#aside .account ~ .shop {
+  margin-top: 15px;
+}
+
+#contents::after {
+  content: '';
+  display: block;
+  clear: both;
+  width: 0;
+  height: 0;
+}
+
+footer#footer {
+  background-color: #fafbfc;
+  border-top: 1px solid #e4e8eb;
+}
+
+footer#footer .gf-content {
+  width: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 30px;
+}
