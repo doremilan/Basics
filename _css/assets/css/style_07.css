@@ -1,0 +1,207 @@
+:root {
+  --gh-height: 400px
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+header#header {
+  position: relative;
+  z-index: 1001;
+  background-color: white;
+  /* height: var(--gh-height); */
+  /* position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0; */
+/* 
+  top: 50px;
+  right: 50px;
+  bottom: 50px;
+  left: 50px; */
+  /* bottom: 0; */
+  /*opacity: 0.5 */
+}
+
+#header:hover {
+  --gh-height: 200px
+}
+
+#searchbar {
+  --search-duration: 120ms;
+  --search-ease: ease-in-out;
+
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  border-bottom: 1px solid #10ce72;
+  /*호버 했다가 나갈때 움직임 설정*/
+  transition: all var(--search-duration) var(--search-ease); 
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0);
+}
+
+#searchbar:hover {
+  --search-duration: 320ms;
+  --search-ease: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  /* border-bottom-width: 3px; */
+    border-bottom: 2px solid #10ce72;
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.12);
+  /*호버 할때 움직임 설정*/
+  /* transition: all 320ms ease-in;
+  transition: all 320ms cubic-bezier(0.860, 0.000, 0.070, 1.000); */
+}
+
+#searchbar .content-area {
+  width: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+
+header#header .content-area {
+  width: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+header#header .special .content-area {
+  position: relative;
+}
+
+header#header .special .content-area > a#logo {
+  overflow: hidden; /*텍스트 들여쓰기 보낸거 영역 아웃라인만큼만 막기*/
+  display: block;
+  position: absolute;
+  top: 46px;
+  left: 30px;
+  width: 222px;
+  height: 54px;
+  margin-left: -9px;
+  background-color: white;
+  opacity: 0.5;
+  background-image: url(./assets/img/naver_main.png);
+  background-size: 442px 428px;
+  background-position: -0px -156px;
+  text-indent: -9999px; /*들여쓰기 옆으로 보내서 안보이게 숨기기*/
+}
+
+header#header .special {
+  border-bottom: 1px solid #e4e8eb;
+}
+
+header#header .group {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+header#header .group nav.navigation {
+  float: left;
+}
+
+header#header .group .weather {
+  float: right;
+}
+
+/*박스 쉐도우 적용을 위해..*/
+header#header .group .content-area::after {
+  content: '';
+  display: block;
+  clear: both;
+  width: 0;
+  height: 0;
+}
+
+#contents {
+  width: 1130px;
+  min-height: calc(100vh - 714px);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 30px;
+  /* padding-top: 233px */
+}
+
+
+#contents main#main{
+  float: left;
+}
+
+#contents aside#aside {
+  float: right;
+}
+
+#contents main#main .veta + .newsstand {
+  margin-top: 12px;
+}
+
+#contents main#main .veta ~ .themecast {
+  position: relative;
+  margin-top: 35px;
+}
+
+#contents aside#aside .account + .timesquare {
+  margin-top: 12px;
+}
+
+#contents aside#aside .account ~ .veta_brandin {
+  margin-top: 12px;
+}
+
+#contents aside#aside .account ~ .shop {
+  margin-top: 15px;
+}
+
+
+#contents main#main .themecast p.paddle {
+  position: absolute;
+  top: 40px;
+  width: 40px;
+  height: 40px;
+  background-image: url(./assets/img/naver_main.png);
+  background-size: 442px 428px;
+}
+
+#contents main#main .themecast p.paddle.paddle-prev {
+  left: -20px;
+  background-position: -128px -342px;
+}
+
+#contents main#main .themecast p.paddle.paddle-next {
+  right: -20px;
+  background-position: -44px -342px;
+}
+
+#contents::after {
+  content: '';
+  display: block;
+  clear: both;
+  width: 0;
+  height: 0;
+}
+
+footer#footer {
+  background-color: #fafbfc;
+  border-top: 1px solid #e4e8eb;
+}
+
+footer#footer .gf-content {
+  width: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 30px;
+}
