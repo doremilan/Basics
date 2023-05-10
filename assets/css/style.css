@@ -120,3 +120,54 @@
 .close-2:hover span:last-child {
   transform: translateX(50%) rotate(-45deg);
 }
+
+.close-3 {
+  overflow: hidden;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 50px;
+  background-color: lightblue;
+  text-indent: -9999px;
+  
+}
+
+.close-3::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50%;
+  background-color: black;
+  width: 8px;
+  height: 100%;
+  /*자기 자신의 50%만큼 이동*/
+  transform: translateX(50%);
+  transition: transform 300ms ease-in;
+}
+
+.close-3::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 8px;
+  /*자기 자신의 50%만큼 이동*/
+  transform: translateY(-50%);
+  transition: transform 300ms ease-in;
+}
+
+.close-3:hover::before {
+  transform: translateY(-50%) rotate(-45deg);
+  transition: transform 120ms ease-out;
+}
+
+.close-3:hover::after {
+  transform: translateX(50%) rotate(-45deg);
+  transition: transform 120ms ease-out;
+}
