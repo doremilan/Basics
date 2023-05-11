@@ -3,171 +3,93 @@
   padding: 0;
 }
 
-.contents {
-  width: 100vw;
-  height: 100vh;
-  transform: perspective(1000px)
+.container {
+  display: flex; 
+  width: 100%;
+  /*컨테이너에 사이즈를 주면 아이템들이 영역이 좁아져서 부족할 경우 컨테이너의 사이즈만큼 비율을 나눠가진다*/
+  height: 800px;
+  /*공간을 줄였을 때 지정한 크기를 유지시켜준다*/
+  flex-wrap: wrap; 
+  /*정렬 방식을 수직으로 바꿈*/
+  /* flex-direction: column; */
+  /*좌우반전 정렬*/
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column-reverse; */
+  flex-direction: row;
+  background-color: lightblue;
+
+  /*가운데 정렬*/
+  /* justify-content: center; */
+  /*end 지점 정렬 로우:왼쪽 컬럼:바텀*/
+  /* justify-content: flex-end; */
+  /* justify-content: flex-start; */
+  /* justify-content: space-around; */
+  /* justify-content: space-between; */
+  justify-content: space-evenly;
+
+  /* align-items: flex-start; */
+  /* align-items: flex-end; */
+  align-items: center;
+  /*아이템들 사이 공간 지정*/
+  gap: 20px
 }
 
-.box {
-  width: 300px;
-  height: 300px;
+.item {
+  width: 150px;
+  /* height: 150px; */
   background-color: black;
-  text-align: center;
   color: white;
+  text-align: center;
+  font-size: 60px;
   font-weight: 600;
-  font-size: 80px;
-  line-height: 300px;
-
-  /* transform 위치 사이즈 회전 변형 속성*/
-  transform: translateX(50px) translateY(100px);
-
-  transition: transform 300ms ease-in-out;
+  line-height: 80px;
+  flex: 1;
 }
 
-.box.box-1 {
-  transform: scale(1.0) rotate(0deg);
+.item.item-6 {
+  /*특정 고정 값을 적용*/
+  flex-basis: 400px; 
+  /* flex: 0.5; */
+  /* flex-shrink: 3; */
+  background-color: red;
+  /*순서를 젤 앞으로 변경*/
+  order: -1;
+  /*컨테이너의 정렬 무시하고 하나만 정렬을 바꿔줄때*/
+  /* align-self: flex-end; */
+  /*늘려준다, height가 없을때*/
+  align-self: stretch;
 }
 
-.box-wrap {
-  width: 300px;
-  height: 300px;
-}
-
-.box-wrap:hover .box.box-1 {
-  transform: scale(0.3) rotate(90deg);
-}
-
-/*
-.box.box-1:hover {
-  transform: scale(0.3) rotate(90deg); 비율대로 사이즈 조절
-  앵커 기준 좌표 지정
-  transform-origin: 100% 0; 
-}
-*/
-
-.close {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  margin: 50px;
-  margin-top: 200px;
-  background-color: lightblue;
-}
-
-.close span {
-  display: block;
-  position: absolute;
-  background-color: black;
-}
-
-.close span:first-child {
+.container-2 {
+  display: flex;
   width: 100%;
-  height: 8px;
-  /* transform: translateY(-50%); 자기자신의 50%만큼 이동*/
-  transform: translateY(50px) rotate(45deg);
-  margin-top: -4px;
-}
-
-.close span:last-child {
-  width: 8px;
-  height: 100%;
-  transform: translateX(50px) rotate(45deg);
-  margin-left: -4px;
-}
-
-.close-2 {
-  position: relative;
-  width: 100px;
   height: 100px;
-  margin: 50px;
-  background-color: lightblue;
+  background-color: skyblue;
 }
 
-.close-2 span {
-  display: block;
-  position: absolute;
-  background-color: black;
-  transition: transform 200ms ease-in;
-}
-
-.close-2:hover span {
-  transition: transform 120ms ease-out;
-}
-
-.close-2 span:first-child {
-  top: 50%;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  transform: translateY(-50%);
-}
-
-.close-2 span:last-child {
-  top: 0;
-  bottom: 0;
-  right: 50%;
-  width: 8px;
-  height: 100%;
-  transform: translateX(50%);
-}
-
-.close-2:hover span:first-child {
-  transform: translateY(-50%) rotate(-45deg);
-}
-
-.close-2:hover span:last-child {
-  transform: translateX(50%) rotate(-45deg);
-}
-
-.close-3 {
-  overflow: hidden;
-  position: relative;
-  width: 100px;
+.container-2 div{
+  padding-right: 20px;
+  padding-left: 20px;
   height: 100px;
-  margin: 50px;
-  background-color: lightblue;
-  text-indent: -9999px;
-  
-}
-
-.close-3::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 50%;
   background-color: black;
-  width: 8px;
-  height: 100%;
-  /*자기 자신의 50%만큼 이동*/
-  transform: translateX(50%);
-  transition: transform 300ms ease-in;
+  color: white;
+  font-size: 20px;
+  line-height: 100px;
 }
 
-.close-3::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  left: 0;
-  background-color: black;
-  width: 100%;
-  height: 8px;
-  /*자기 자신의 50%만큼 이동*/
-  transform: translateY(-50%);
-  transition: transform 300ms ease-in;
+/* .item-1 + .item-2 {
+  margin-left: 50px;
 }
 
-.close-3:hover::before {
-  transform: translateY(-50%) rotate(-45deg);
-  transition: transform 120ms ease-out;
+.item-1 {
+  margin-right: auto;
 }
 
-.close-3:hover::after {
-  transform: translateX(50%) rotate(-45deg);
-  transition: transform 120ms ease-out;
+.item-3 {
+  margin-left: auto;
+} */
+
+.item-2 {
+  margin-left: auto;
+  margin-right: auto;
 }
