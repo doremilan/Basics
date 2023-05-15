@@ -1,95 +1,190 @@
-* {
-  margin: 0;
-  padding: 0;
+/*---- Reset ----*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
-.container {
-  display: flex; 
-  width: 100%;
-  /*컨테이너에 사이즈를 주면 아이템들이 영역이 좁아져서 부족할 경우 컨테이너의 사이즈만큼 비율을 나눠가진다*/
-  height: 800px;
-  /*공간을 줄였을 때 지정한 크기를 유지시켜준다*/
-  flex-wrap: wrap; 
-  /*정렬 방식을 수직으로 바꿈*/
-  /* flex-direction: column; */
-  /*좌우반전 정렬*/
-  /* flex-direction: row-reverse; */
-  /* flex-direction: column-reverse; */
-  flex-direction: row;
-  background-color: lightblue;
-
-  /*가운데 정렬*/
-  /* justify-content: center; */
-  /*end 지점 정렬 로우:왼쪽 컬럼:바텀*/
-  /* justify-content: flex-end; */
-  /* justify-content: flex-start; */
-  /* justify-content: space-around; */
-  /* justify-content: space-between; */
-  justify-content: space-evenly;
-
-  /* align-items: flex-start; */
-  /* align-items: flex-end; */
-  align-items: center;
-  /*아이템들 사이 공간 지정*/
-  gap: 20px
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.item {
-  width: 150px;
-  /* height: 150px; */
-  background-color: black;
-  color: white;
-  text-align: center;
-  font-size: 60px;
-  font-weight: 600;
-  line-height: 80px;
-  flex: 1;
+/*----------*/
+.visivility_hidden {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0;
+  clip: rect(0 0 0 0)
 }
 
-.item.item-6 {
-  /*특정 고정 값을 적용*/
-  flex-basis: 400px; 
-  /* flex: 0.5; */
-  /* flex-shrink: 3; */
-  background-color: red;
-  /*순서를 젤 앞으로 변경*/
-  order: -1;
-  /*컨테이너의 정렬 무시하고 하나만 정렬을 바꿔줄때*/
-  /* align-self: flex-end; */
-  /*늘려준다, height가 없을때*/
-  align-self: stretch;
+main#main {
+  /* max-width: 1280px; */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.container-2 {
+/* container */
+main#main .grid {
   display: flex;
+  flex-wrap: wrap;
+  padding-top: 100px;
+  justify-content: space-evenly;
+  /* justify-content: flex-end; */
+
+  align-items: flex-end;
+}
+
+/* flex item */
+main#main .grid .grid_item {
+  padding-right: 15px;
+  padding-bottom: 80px;
+  padding-left: 15px;
+}
+
+main#main .grid .grid_item:nth-child(4) {
+  order: -1;
+  align-self: flex-start;
+}
+
+main#main .grid .grid_item:nth-child(4) figure{
+  display: flex;
+  flex-direction: column;
+}
+
+main#main .grid .grid_item:nth-child(4) figure figcaption{
+  margin-top: initial;
+  margin-bottom: 16px;
+  /* text-align: right; */
+  align-self: flex-end;
+  order: -1;
+}
+
+.grid .grid_item figure {
+  width: 240px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid .grid_item figure img {
+  display: inline-block;
   width: 100%;
-  height: 100px;
-  background-color: skyblue;
+  vertical-align: top;
 }
 
-.container-2 div{
-  padding-right: 20px;
-  padding-left: 20px;
-  height: 100px;
+.grid .grid_item figure figcaption {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+  color: #808080
+}
+
+.indicator {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
   background-color: black;
-  color: white;
-  font-size: 20px;
-  line-height: 100px;
+  color: white
 }
 
-/* .item-1 + .item-2 {
-  margin-left: 50px;
+.indicator::after {
+  content: '-';
+  display: inline-block;
+  vertical-align: top;
 }
 
-.item-1 {
-  margin-right: auto;
+/* @media only screen { */
+/* 브라우저 가로폭이 800px 보다 큰 경우 */
+@media only screen and (min-width: 800px) {
+  .indicator {
+    background-color: lightblue;
+  }
 }
 
-.item-3 {
-  margin-left: auto;
-} */
+/* 500 ~ 799까지*/
+@media only screen and (min-width: 700px) and (max-width: 799px) {
+  .indicator {
+    background-color: violet;
+  }
+}
 
-.item-2 {
-  margin-left: auto;
-  margin-right: auto;
+/* mobile ~586px */
+@media only screen and (max-width: 586) {
+  .indicator::after {
+    content: '~586px';
+  }
+  body {
+    background-color: black;
+  }
+}
+/* tablet - 586 ~ 1024px */
+@media only screen and (min-width: 587px) and (max-width: 1024px) {
+  .indicator::after {
+    content: '587px ~ 1024px';
+  }
+  body {
+    background-color: #333333;
+  }
+}
+/* desktop - 1025 ~ 1280px */
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .indicator::after {
+    content: '1025px ~ 1280px';
+  }
+  body {
+    background-color: #444444;
+  }
+}
+/* desktop - wide 1281 ~ 1600px */
+@media only screen and (min-width: 1281px) and (max-width: 1600px) {
+  .indicator::after {
+    content: '1281px ~ 1600px';
+  }
+  body {
+    background-color: #555555;
+  }
+}
+/*desktop -large 1601 ~ */
+@media only screen and (max-width: 1601px) {
+  .indicator::after {
+    content: '1601px~';
+  }
+  body {
+    background-color: #666666;
+  }
 }
