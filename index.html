@@ -1,140 +1,127 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS</title>
-  <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-<body>
-  <h1 class="visivility_hidden">Flexbox Layout</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오늘의 집</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="group-1">
+        <div class="content-area">
+          <nav class="navigation" role="navigation">
+            <img src="/assets/img/01_header_01_navigation.jpg" alt="navigation" width="1256" height="80" />
+          </nav>
+        </div>
+      </div>
+      <div class="group-2">
+        <div class="content-area">
+          <nav class="submenu" role="submenu">
+            <img src="/assets/img/01_header_02_submenu.jpg" alt="submenu" width="1256" height="50" />
+          </nav>
+        </div>
+      </div>
+    </header>
 
-  <!-- main#main>div.grid>div.grid_item*20>figure>img -->
-  <main id="main">
-    <div class="grid">
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/1.jpg" alt="caption 1">
-          <figcaption>caption 1</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/2.jpg" alt="caption 2">
-          <figcaption>caption 2</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/3.jpg" alt="caption 3">
-          <figcaption>caption 3</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item item-4">
-        <figure>
-          <img src="assets/css/img/4.jpg" alt="caption 4">
-          <figcaption>caption 4</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/5.jpg" alt="caption 5">
-          <figcaption>caption 5</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/6.jpg" alt="caption 6">
-          <figcaption>caption 6</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/7.jpg" alt="caption 7">
-          <figcaption>caption 7</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/8.jpg" alt="caption 8">
-          <figcaption>caption 8</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/9.jpg" alt="caption 9">
-          <figcaption>caption 9</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/10.jpg" alt="caption 10">
-          <figcaption>caption 10</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/11.jpg" alt="caption 11">
-          <figcaption>caption 11</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/12.jpg" alt="caption 12">
-          <figcaption>caption 12</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/13.jpg" alt="caption 13">
-          <figcaption>caption 13</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/14.jpg" alt="caption 14">
-          <figcaption>caption 14</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/15.jpg" alt="caption 15">
-          <figcaption>caption 15</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/16.jpg" alt="caption 16">
-          <figcaption>caption 16</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/17.jpg" alt="caption 17">
-          <figcaption>caption 17</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/18.jpg" alt="caption 18">
-          <figcaption>caption 18</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/19.jpg" alt="caption 19">
-          <figcaption>caption 19</figcaption>
-        </figure>
-      </div>
-      <div class="grid_item">
-        <figure>
-          <img src="assets/css/img/20.jpg" alt="caption 20">
-          <figcaption>caption 20</figcaption>
-        </figure>
+    <div class="banner">
+      <div class="content-area">
+        <img src="/assets/img/00_banner.jpg" alt="submenu" width="1156" height="50" />
       </div>
     </div>
-  </main>
-  <div class="indicator">Size: </div>
-</body>
+
+    <div class="contents">
+      <main id="main" role="main">
+        <div class="overview">
+          <div class="project">
+            <img src="/assets/img/02_main_01_overview_01_projects.jpg" alt="project" width="847" height="508" />
+          </div>
+          <div class="events">
+            <img src="/assets/img/02_main_01_overview_02_events.jpg" alt="events" width="269" height="508" />
+          </div>
+        </div>
+        <div class="categories">
+          <img src="/assets/img/02_main_02_categories.jpg" alt="categories" width="1256" height="107.25" />
+        </div>
+        <div class="articles1">
+          <div class="article1">
+            <img src="/assets/img/02_main_03_articles1_01_article1.jpg" alt="article1" width="1156" height="305.33" />
+          </div>
+          <div class="article2">
+            <img src="/assets/img/02_main_03_articles1_02_article2.jpg" alt="article2" width="1156" height="305.33" />
+          </div>
+          <div class="article3">
+            <img src="/assets/img/02_main_03_articles1_03_article3.jpg" alt="article3" width="1156" height="305.33" />
+          </div>
+          <div class="article4">
+            <img src="/assets/img/02_main_03_articles1_04_article4.jpg" alt="article4" width="1156" height="305.33" />
+          </div>
+        </div>
+        <div class="caregory-finder">
+          <img src="/assets/img/02_main_04_category_finder.jpg" alt="caregory-finder" width="1156" height="166" />
+        </div>
+        <div class="today-deal">
+          <img src="/assets/img/02_main_05_today_deal.jpg" alt="today-deal" width="1156" height="468" />
+        </div>
+        <div class="article2">
+          <div class="article1">
+            <img src="/assets/img/02_main_06_articles2_01_article1.jpg" alt="article1" width="1156" height="305.33" />
+          </div>
+          <div class="article2">
+            <img src="/assets/img/02_main_06_articles2_02_article2.jpg" alt="article2" width="1156" height="305.33" />
+          </div>
+        </div>
+        <div class="top10">
+          <img src="/assets/img/02_main_07_top10.jpg" alt="top10" width="1156" height="320.22" />
+        </div>
+        <div class="reviews">
+          <img src="/assets/img/02_main_08_reviews.jpg" alt="reviews" width="1156" height="419.56" />
+        </div>
+        <div class="events">
+          <img src="/assets/img/02_main_09_events.jpg" alt="events" width="1156" height="305.33" />
+        </div>
+        <div class="grid">
+          <div class="grid-item">
+            <img src="/assets/img/02_main_10_best_01_head_01_title.jpg" alt="grid-item1" width="54.3" height="28" />
+          </div>
+          <div class="grid-item">
+            <img src="/assets/img/02_main_10_best_01_head_02_util.jpg" alt="grid-item2" width="44.16" height="20" />
+          </div>
+          <div class="grid-item">
+            <img src="/assets/img/02_main_10_best_02_menu.jpg" alt="grid-item3" width="1136" height="32" />
+          </div>
+          <div class="grid-item">
+            <img
+              src="/assets/img/02_main_10_best_03_list_01_item1.jpg"
+              alt="grid-item4"
+              width="365.33"
+              height="498.34"
+            />
+          </div>
+          <div class="grid-item">
+            <img
+              src="/assets/img/02_main_10_best_03_list_02_item2.jpg"
+              alt="grid-item5"
+              width="365.33"
+              height="498.34"
+            />
+          </div>
+          <div class="grid-item">
+            <img
+              src="/assets/img/02_main_10_best_03_list_03_item3.jpg"
+              alt="grid-item6"
+              width="365.33"
+              height="498.34"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer id="footer" role="contentinfo">
+      <div class="gf-content">
+        <img src="/assets/img/03_footer.jpg" alt="footer" width="1256" height="220" />
+      </div>
+    </footer>
+  </body>
 </html>
