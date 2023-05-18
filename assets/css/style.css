@@ -125,12 +125,158 @@ table {
 }
 
 /*----------*/
-
-.img {
+img {
   display: inline-block;
   vertical-align: top;
 }
 
+aside#banner {
+ width: 100%;
+ background-color: #54b8fb;
+}
+
+/* aside#banner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+} */
+
 header#header {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;  
   background-color: white;
+}
+
+aside#banner .banner_content,
+header#header .header_content,
+main#main .main_content,
+footer#footer .footer-content {
+  width: 1256px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 60px;
+  padding-left: 60px;
+  box-sizing: border-box;
+}
+
+header#header, 
+header#header nav#navigation {
+  border-bottom: 1px solid #eaedef;
+}
+
+main#main {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+section#overview {
+  display: flex;
+  /* justify-content: space-between; */
+  /* gap: 25px; */
+}
+
+section#overview .events {
+  margin-left: auto;
+}
+
+/* section#overview .project + .events {
+  margin-left: 25px;
+} */
+
+section#categories {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* section#articles_first {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 40px;
+} */
+
+section#articles_first .article + .article {
+  margin-top: 40px;
+}
+
+/* section#articles_first .article {
+  margin-bottom: 40px;
+}
+
+section#articles_first .article:last-child {
+  margin-bottom: 0;
+} */
+
+/* section#articles_first .article {
+  margin-top: 40px;
+}
+
+section#articles_first .article:first-child {
+  margin-top: 0;
+} */
+
+/* section#category_finder,
+section#today_deal,
+section#article_second,
+section#top10,
+section#reviews,
+section .events {
+  margin-top: 40px;
+} */
+
+main#main section +section {
+  margin-top: 40px;
+}
+
+section#article_second .article + .article {
+  margin-top: 40px;  
+}
+
+/* section#best .head,
+section#best .list {
+  display: flex;
+} */
+
+section#best .head .util {
+  margin-left: auto;
+}
+
+section#best .head + menu {
+  margin-top: 20px;
+}
+
+/* section#best .list .item + .item {
+  margin-left: 20px;
+} */
+
+section#best .menu + .list {
+  margin-top: 20px;
+}
+
+section#best .list .list_wrap {
+  display: flex;
+  /* margin-top: -20px; */
+  margin-right: -10px;
+  /* margin-bottom: -20px; */
+  margin-left: -10px;
+}
+
+section#best .list .item {
+  /* width: 50%; */
+  /* padding-top: 20px; */
+  padding-right: 10px;
+  /* padding-bottom: 20px; */
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+section#best .list .item img {
+  width: 100% !important;
+}
+
+footer#footer {
+  background-color: #f8f9fb;
 }
