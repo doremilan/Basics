@@ -131,8 +131,49 @@ img {
 }
 
 aside#banner {
- width: 100%;
- background-color: #54b8fb;
+  position: relative;
+  width: 100%;
+  background-color: #54b8fb;
+}
+
+aside#banner .close_box {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  width: 24px;
+  height: 24px;
+}
+
+.close {
+  overflow: hidden;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  text-indent: -9999px;
+}
+
+.close::before,
+.close::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+}
+
+.close::after {
+  top: 20%;
+  bottom: 20%;
+  right: 50%;
+  width: 2px;
+  transform: translateX(50%) rotate(-45deg);
+}
+
+.close::before {
+  top: 50%;
+  right: 20%;
+  left: 20%;
+  height: 2px;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 /* aside#banner {
@@ -146,8 +187,27 @@ header#header {
   position: sticky;
   top: 0;
   right: 0;
-  left: 0;  
+  left: 0;
   background-color: white;
+}
+
+header#header .logo .content-area {
+  position: relative;
+}
+
+header#header .logo .content-area > a#logo.logo {
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 155px;
+  width: 82px;
+  height: 38px;
+  background-color: white;
+  background-image: url(/assets/img/ohou_main.png);
+  background-size: 108px 91px;
+  background-position: -10 0;
+  text-indent: -9999px;
 }
 
 aside#banner .banner_content,
@@ -162,7 +222,7 @@ footer#footer .footer-content {
   box-sizing: border-box;
 }
 
-header#header, 
+header#header,
 header#header nav#navigation {
   border-bottom: 1px solid #eaedef;
 }
@@ -227,25 +287,40 @@ section .events {
   margin-top: 40px;
 } */
 
-main#main section +section {
+main#main section + section {
   margin-top: 40px;
 }
 
 section#article_second .article + .article {
-  margin-top: 40px;  
+  margin-top: 40px;
 }
 
-/* section#best .head,
+section#best .head,
 section#best .list {
   display: flex;
-} */
+}
 
 section#best .head .util {
   margin-left: auto;
 }
 
-section#best .head + menu {
+section#best .menu {
+  position: relative;
   margin-top: 20px;
+}
+section#best .menu a#slide {
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  background-image: url(/assets/img/ohou_main.png);
+  background-size: 108px 91px;
+  background-position: 94% 90%;
+  border-radius: 100%;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* section#best .list .item + .item {
