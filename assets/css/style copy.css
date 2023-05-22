@@ -130,6 +130,59 @@ img {
   vertical-align: top;
 }
 
+.visibility_hidden {
+  position: absolute;
+  visibility: hidden !important;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  clip: rect(0 0 0 0);
+}
+
+h1#brand {
+  position: absolute;
+  top: 25px;
+  left: 190px;
+  width: 74px;
+  height: 30px;
+}
+
+/* Bitmap 이미지 */
+/* h1#brand a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/img/ohou_main.png);
+  background-size: 108px 91px;
+  background-position: -4px -4px;
+} */
+
+/* Vector 이미지 */
+h1#brand a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* background-image: url(/assets/img/ohou_logo.svg);
+  background-size: 108px 91px;
+  background-position: -4px -4px; */
+}
+
+h1#brand a svg#brand_svg {
+  display: inline-block;
+  width: 74px;
+  height: 30px;
+  vertical-align: top;
+}
+
+h1#brand a svg#brand_svg path {
+  fill: #333333;
+}
+
+h1#brand a:hover svg#brand_svg path {
+  fill: black;
+  transition: fill 200ms ease-in-out;
+}
+
 aside#banner {
   position: relative;
   width: 100%;
@@ -215,6 +268,7 @@ aside#banner .close_box {
 
 header#header {
   position: sticky;
+  z-index: 1000;
   top: 0;
   right: 0;
   left: 0;
@@ -334,15 +388,59 @@ section#best .head .util {
   margin-left: auto;
 }
 
+section#category_finder {
+  position: relative;
+}
+
+button.arrow_button {
+  overflow: hidden;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  text-indent: -9999px;
+  border: 0;
+  background-color: transparent;
+  background-image: url(/assets/img/ohou_main.png);
+  background-size: 108px 91px;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 240ms ease-in;
+}
+
+section#best .menu button.arrow_button {
+  top: -8px;
+}
+
+section#category_finder button.arrow_button {
+  top: 64px;
+}
+
+button.arrow_button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: all 360ms ease-out;
+}
+
+button.arrow_button.arrow_preview{
+  left: -24px;
+  background-position: -4px -39px;
+}
+
+button.arrow_button.arrow_next{
+  right: -24px;
+  background-position: -56px -39px;
+}
+
 section#best .menu {
   position: relative;
   margin-top: 20px;
 }
+
 section#best .menu a#slide {
   display: block;
   position: absolute;
-  top: -10px;
-  right: -20px;
+  top: -8px;
+  right: -24px;
   width: 48px;
   height: 48px;
   background-color: white;
