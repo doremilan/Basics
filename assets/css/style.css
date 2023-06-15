@@ -242,10 +242,15 @@ input[autocomplete="off"]::-webkit-contacts-auto-fill-button {
 
 }
 
+:root {
+  --gn_height: 44px;
+}
+
 /*-- Layout --*/
 /*-- Global Header --*/
 #global_header {
-  --gn_bg: rgba(22, 22, 23, 0.8);
+  --gn_filter: saturate(180%) blur(20px);
+  --gn_bg: rgba(251, 251, 253, 0.8);
 }
 
 body {
@@ -254,15 +259,17 @@ body {
 
 nav#global_navigation {
   position: fixed;
+  /*z값은 position값이 있어야 적용됨*/
+  z-index: 9999;
   top: 0;
   right: 0;
   left: 0;
   min-width: 320px;
-  max-height: 44px;
+  max-height: var(--gn_height);
   background-color: var(--gn_bg);
   /*아래 요소가 블러처리되는 효과*/
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: var(--gn_filter);
+  -webkit-backdrop-filter: var(--gn_filter);
 }
 
 nav#global_navigation .gn_content {
@@ -305,19 +312,26 @@ ul#gn_list li.gn_item.gn_item_apple a.gn_link.gn_link_apple {}
 li.gn_item.gn_item_apple a.gn_link.gn_link_apple .gn_link_image {}
 
 ul#gn_list li.gn_item.gn_item_apple a.gn_link.gn_link_apple {}
-li.gn_item.gn_item_apple a.gn_link.gn_link_apple .gn_link_image svg {
+
+li.gn_item.gn_item_apple a.gn_link.gn_link_apple .gn_link_image svg,
+li.gn_item.gn_item_bag button.gn_bag_button span.gn_bag_image svg {
   display: block;
 }
 
 ul#gn_list li.gn_item.gn_item_apple a.gn_link.gn_link_apple {}
 
-li.gn_item.gn_item_apple a.gn_link.gn_link_apple .gn_link_image svg path {
-  fill: #ffffff;
+li.gn_item.gn_item_apple a.gn_link.gn_link_apple .gn_link_image svg path, 
+li.gn_item.gn_item_search button.gn_search_button span.gn_search_image svg path
+ {
+  fill: rgba(0, 0, 0, 0.8);
 }
 
 li.gn_item.gn_item_apple a.gn_link.gn_link_apple .gn_link_image.gn_link_image--d {}
 
-li.gn_item.gn_item_apple a.gn_link.gn_link_apple .gn_link_image.gn_link_image--m {
+li.gn_item.gn_item_apple a.gn_link.gn_link_apple .gn_link_image.gn_link_image--m,
+li.gn_item.gn_item_search button.gn_search_button span.gn_search_image--m,
+li.gn_item.gn_item_bag button.gn_bag_button span.gn_bag_image--m
+ {
   display: none;
 }
 
@@ -327,23 +341,33 @@ ul#gn_list li.gn_item.gn_item_menu {
   flex-grow: 1;
 }
 
-ul#gn_list li.gn_item.gn_item_menu .gn_menu_flyout {}
+ul#gn_list li.gn_item.gn_item_menu .gn_menu_flyout {
+  height: 100%;
+}
 ul#gn_list li.gn_item.gn_item_menu .gn_menu_list {
   display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
 }
-ul#gn_list li.gn_item.gn_item_menu .gn_menu_list .gn_menu_item {}
+ul#gn_list li.gn_item.gn_item_menu .gn_menu_list .gn_menu_item {
+}
 
-li.gn_item.gn_item_menu .gn_menu_list .gn_menu_item a.gn_menu_link {}
+li.gn_item.gn_item_menu .gn_menu_list .gn_menu_item a.gn_menu_link {
+  display: inline-block;
+  padding: 12px 8px;
+  vertical-align: top;
+  font-size: 12px;
+  letter-spacing: -0.01em;
+  line-height: 20px;
+  white-space: nowrap;
+}
 
 li.gn_item.gn_item_menu .gn_menu_list .gn_menu_item a.gn_menu_link span.gn_menu_link_text {}
 
 ul#gn_list li.gn_item.gn_item_search {}
 
 li.gn_item.gn_item_search button.gn_search_button span.gn_search_image.gn_search_image--d {}
-
-li.gn_item.gn_item_search button.gn_search_button span.gn_search_image.gn_search_image--m {
-  display: none;
-}
 
 li.gn_item.gn_item_search button.gn_search_button span.gn_search_text {
   text-indent: -9999rem;
@@ -352,10 +376,6 @@ li.gn_item.gn_item_search button.gn_search_button span.gn_search_text {
 ul#gn_list li.gn_item.gn_item_bag {}
 
 li.gn_item.gn_item_bag button.gn_bag_button span.gn_bag_image.gn_bag_image--d {}
-
-li.gn_item.gn_item_bag button.gn_bag_button span.gn_bag_image.gn_bag_image--m {
-  display: none;
-}
 
 li.gn_item.gn_item_bag button.gn_bag_button span.gn_bag_text {
   text-indent: -9999rem;
@@ -413,30 +433,108 @@ li.gn_item.gn_item_bag button.gn_bag_button span.gn_bag_text {
   line-height: 300px;
 }
 
+@media only screen and (max-width: 680px) {
+  /* .layout .layout_list .layout_item {
+    width: 33.3%
+  } */
+}
+
 @media only screen and (max-width: 360px) {
   .layout .layout_list .layout_item {
     width: 100%;
+    padding: 10px 10px;
   }
 }
 
-@media only screen and (min-width: 481px) and  (max-width: 680px) {
-  .layout .layout_list .layout_item {
-    width: 33.3%;
-  }
-}
-
-@media only screen and (min-width: 361px) and  (max-width: 480px) {
+@media only screen and (min-width: 361px) and (max-width: 480px) {
   .layout .layout_list .layout_item {
     width: 50%;
+    padding: 15px 20px;
   }
 }
 
-@media only screen and (min-width: 681px) and  (max-width: 800px) {
+@media only screen and (min-width: 481px) and (max-width: 680px) {
+  .layout .layout_list .layout_item {
+    width: 33.3%;
+    padding: 20px 15px;
+  }
+}
+
+@media only screen and (min-width: 681px) and (max-width: 800px) {
   .layout .layout_list .layout_item {
     width: 25%;
-    padding:...!?
+    padding: 25px 10px;
   }
 }
 
-*위 구조 다시 만들어 보기
-*각 미디어 사이즈마다 간격 조정하기
+/* --main-- */
+main#main {
+padding-top: var(--gn_height);
+}
+
+main#main section.main_section {}
+
+section#hero_section.main_section .section_content {
+  position: relative;
+  width: 100%;
+  height: var(--content_height);
+}
+
+#hero--macbook_air_15.section_content {
+  --content_height: 692px;
+}
+#hero--vision_pro_15.section_content {
+  --content_height: 736px;
+}
+#hero--iPhone_14_pro.section_content {
+  --content_height: 736px;
+}
+
+section.main_section a.unit_link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+section.main_section .unit_copy_wrapper {
+  display: flex;
+  width: 100%;
+  padding-top: 55px;
+  flex-direction: column;
+  align-items: center;
+}
+section.main_section .unit_copy_wrapper h2.headline {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 60px;
+}
+section.main_section .unit_copy_wrapper h3.subhead {
+  margin-top: 3px;
+}
+section.main_section .unit_copy_wrapper h3.subhead +
+p.callout {
+  margin-top: 15px;
+  color: #6e6e73;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 25px;
+}
+section.main_section .unit_copy_wrapper .cta_links {
+  display: flex;
+}
+section.main_section .unit_copy_wrapper .cta_links .cta_link {
+  display: block;
+  color: #0066cc;
+  font-size: 21px;
+  line-height: 24px;
+}
+section.main_section .unit_copy_wrapper .cta_link span {}
+section.main_section .unit_copy_wrapper .cta_link span.name {}
+section.main_section .unit_copy_wrapper .cta_link span.icon {}
+
+
+
+section.main_section .unit_image_wrapper {}
