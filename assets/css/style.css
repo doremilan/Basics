@@ -878,7 +878,71 @@ section.main_section #promo--iPad_pro.section_item .unit_copy_wrapper {
 
 
 section#gallery_section.main_section {}
-section#gallery_section.main_section .gallery {}
+section#gallery_section.main_section .gallery {
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery .gallery_wrapper {
+  --item-count: 11;
+  width: 1265px;
+  height: 667px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.gallery .gallery_wrapper .gallery_container {
+  display: flex;
+  width: calc(1265px * var(--item-count));
+  height: 100%;
+}
+
+.gallery .gallery_wrapper .gallery_container .gallery_item {
+  width: 1265px;
+  height: 100%;
+}
+
+.gallery .gallery_wrapper .gallery_container .gallery_item .gallery_item_wrapper {
+  position: relative;
+  width: 1250px;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.gallery .gallery_wrapper .gallery_container .gallery_item .gallery_item_wrapper a.item_link {
+  position: absolute;
+  display: block;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery .gallery_item .gallery_item_wrapper .item_copy_wrapper {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-left: 68px;
+  padding-bottom: 50px;
+  flex-direction: row;
+  color: #fff;
+  align-items: flex-end;
+}
+
+.gallery .gallery_item .gallery_item_wrapper .item_copy_wrapper button {
+  color: #fff;
+}
+
+.gallery .gallery_item .item_image_wrapper {}
+.gallery .gallery_item .item_image_wrapper figure.item_image {
+  z-index: -1;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 section#gallery_section.main_section .gallery ul.gallery_indicator{
   display: flex;
   width: 100%;
@@ -913,3 +977,16 @@ section#gallery_section.main_section .gallery ul.gallery_indicator li.active but
   background-color: #000000;
   cursor: default;
 }
+
+
+
+
+
+/* footer#global_footer .footer-content {
+  width: 1024px;
+  height: 880.25px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 22px;
+  padding-left: 22px;
+} */
