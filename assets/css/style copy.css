@@ -1080,13 +1080,38 @@ section#gallery_section.main_section .gallery {
   margin-left: auto;
 }
 .gallery .gallery_wrapper .gallery_container {
-  display: flex;
-  width: calc(1265px * var(--item-count));
+  position: relative;
+  width: 100%;
   height: 100%;
+  /* display: flex; */
 }
+
 .gallery .gallery_wrapper .gallery_container .gallery_item {
   width: 1265px;
+  position: absolute;
   height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.gallery .gallery_wrapper .gallery_container #gallery_1 {
+  transform: translateX(0, 0);
+}
+
+.gallery .gallery_wrapper .gallery_container #gallery_2 {
+  transform: translateX(1265px, 0);
+}
+
+.gallery .gallery_wrapper .gallery_container #gallery_3 {
+  transform: translateX(2530px, 0);
+}
+
+.gallery .gallery_wrapper .gallery_container #gallery_4 {
+  transform: translateX(3795px, 0);
+}
+
+.gallery .gallery_wrapper .gallery_container #gallery_5.gallery_item {
+  transform: translateX(-1265px, 0);
 }
 
 .gallery .gallery_wrapper .gallery_container .gallery_item .gallery_item_wrapper {
@@ -1130,7 +1155,18 @@ section#gallery_section.main_section .gallery {
   padding-left: 28px;
 }
 
-.gallery .gallery_item .item_copy_wrapper button::after {
+.gallery .gallery_item .item_copy_wrapper button.button_play span {
+  display: inline-block;
+  position: absolute;
+  background-color: black;
+  width: 16px;
+  height: 16px;
+  margin-left: 80px;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+/* .gallery .gallery_item .item_copy_wrapper button::before {
   content: '';
   display: inline-block;
   position: absolute;
@@ -1140,6 +1176,21 @@ section#gallery_section.main_section .gallery {
   margin-left: 80px;
   border-radius: 50%;
   z-index: 10000;
+} */
+
+.gallery .gallery_item .item_copy_wrapper button span::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 10px;
+  border-color: transparent transparent transparent #f7f8fa;
 }
 
 .gallery .gallery_item .item_copy_wrapper p.typography {
